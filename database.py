@@ -1,6 +1,9 @@
 import sqlite3
 import os
 import pymongo
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def init_sqlite_db():
     conn = sqlite3.connect('users.db')

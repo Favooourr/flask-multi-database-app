@@ -123,7 +123,9 @@ def upload():
         if file and file.filename.endswith('.csv'):
             df = pd.read_csv(file)
             records = df.to_dict(orient='records')
-            collection.insert_many(records)
+            for record in records:
+                if not collection.find_one({"invoice_no": record["invoice_no"]}):
+                    collection.insert_one(record)
             flash("Data has been successfully stored!", "success")
             return redirect('/view')  # Redirect to view page after uploading
 
