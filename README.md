@@ -20,7 +20,7 @@ A Python Flask web application integrating SQLite and MongoDB.
 
 ## Setup
 1. Clone this repository.
-2. Install the required Python packages.
+2. Install the required Python packages using pip install -r requirements.txt.
 3. Create a `.env` file with `MONGODB_URI` and `FLASK_SECRET_KEY`.
 4. Run `python app.py`.
 
